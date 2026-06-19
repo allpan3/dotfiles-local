@@ -1,0 +1,25 @@
+### Local bashrc file containing system-specific settings
+
+########## Variables ##########
+# macOS automatically adds all paths in /etc/paths.d
+
+########## Alias ##########
+alias typora="open -a typora"
+alias dsclean='find . -type f -name .DS_Store -delete'
+alias lv='NVIM_APPNAME="nvim-lazyvim" nvim'
+
+########## Completion ##########
+# ble.sh ships its own completion scripts, no need to load again
+if [[ -z ${BLE_VERSION-} ]]; then
+  if [[ -d "${HOMEBREW_PREFIX}" ]] ; then
+      if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+      then
+          source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+      else
+          for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+          do
+              [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+          done
+      fi
+  fi
+fi
