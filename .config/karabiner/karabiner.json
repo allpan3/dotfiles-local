@@ -105,7 +105,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK+hjkl to arrow keys (w/ some modifiers) in some apps. Must also enable the main CAPS_LOCK setting.",
+                        "description": "CAPS_LOCK+hjkl to arrow keys (w/ some modifiers) in non-terminal apps. Must also enable the main CAPS_LOCK setting.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -209,6 +209,247 @@
                                     }
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CAPS_LOCK+regular keys: 20 ms release grace in terminal apps. Must also enable the main CAPS_LOCK setting.",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "from_event": true }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.googlecode.iterm2",
+                                            "com.github.wez.wezterm",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "any": "key_code",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 20,
+                                    "basic.to_if_held_down_threshold_milliseconds": 20
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "name": "caps_lock pressed",
+                                                "type": "variable_if",
+                                                "value": 0
+                                            }
+                                        ],
+                                        "key_code": "escape"
+                                    },
+                                    { "from_event": true }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "name": "caps_lock pressed",
+                                                "type": "variable_if",
+                                                "value": 0
+                                            }
+                                        ],
+                                        "key_code": "escape"
+                                    },
+                                    { "from_event": true }
+                                ],
                                 "type": "basic"
                             }
                         ]
