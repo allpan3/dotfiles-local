@@ -20,3 +20,28 @@ if [[ -d "${HOMEBREW_PREFIX}" ]] ; then
       done
   fi
 fi
+
+# Override typst completion behavior
+# Completes typst compile positional arguments as files
+_typst_files_first() {
+  local cur prev sub
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  sub="${COMP_WORDS[1]}"
+
+  if [[ "$sub" == compile || "$sub" == c ]] && [[ "$cur" != -* ]]; then
+    case "$prev" in
+      --format|-f|--pdf-standard|--deps-format|--features|--diagnostic-format)
+        _typst "$@"
+        return
+        ;;
+    esac
+
+    COMPREPLY=( $(compgen -f -- "$cur") )
+    return
+  fi
+
+  _typst "$@"
+}
+
+complete -o filenames -o bashdefault -o default -F _typst_files_first typst
