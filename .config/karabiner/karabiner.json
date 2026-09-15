@@ -146,7 +146,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK+hjkl to arrow keys (w/ some modifiers) in non-terminal apps. Must also enable the main CAPS_LOCK setting.",
+                        "description": "CAPS_LOCK+hjkl to arrow keys (w/ modifiers) in non-terminal apps. Must also enable the main CAPS_LOCK setting.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -173,14 +173,8 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "left_shift",
-                                            "left_option",
-                                            "fn"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
@@ -215,14 +209,8 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "left_shift",
-                                            "left_option",
-                                            "fn"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
@@ -257,14 +245,8 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "left_shift",
-                                            "left_option",
-                                            "fn"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
@@ -299,14 +281,8 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ],
-                                        "optional": [
-                                            "left_shift",
-                                            "left_option",
-                                            "fn"
-                                        ]
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
