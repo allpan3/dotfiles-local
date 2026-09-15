@@ -565,10 +565,7 @@
                                 },
                                 "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
                                 "to": [
-                                    {
-                                        "key_code": "left_option",
-                                        "lazy": true
-                                    },
+                                    { "key_code": "left_option" },
                                     {
                                         "set_variable": {
                                             "name": "double_left_option_pending",
@@ -601,12 +598,7 @@
                                     "basic.to_delayed_action_delay_milliseconds": 300,
                                     "basic.to_if_alone_timeout_milliseconds": 250
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_option",
-                                        "lazy": true
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_option" }],
                                 "to_delayed_action": {
                                     "to_if_canceled": [
                                         {
