@@ -4,40 +4,11 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change right_control to F17 when pressed alone",
-                        "enabled": false,
+                        "description": "Left Control → Hyper (Right Control+Option+Command)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_control",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "f17"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change right_command to F18 when pressed alone",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "right_command",
+                                    "key_code": "left_control",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -47,12 +18,10 @@
                                 "to": [
                                     {
                                         "key_code": "right_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "f18"
+                                        "modifiers": [
+                                            "right_control",
+                                            "right_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
