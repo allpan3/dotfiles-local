@@ -157,12 +157,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -187,12 +181,6 @@
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -221,12 +209,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -251,12 +233,6 @@
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
                                             "com.mitchellh.ghostty"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -290,12 +266,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -319,12 +289,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -348,12 +312,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -377,12 +335,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -406,12 +358,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -435,12 +381,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -464,12 +404,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -493,12 +427,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -522,12 +450,6 @@
                                             "com.mitchellh.ghostty"
                                         ],
                                         "type": "frontmost_application_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
@@ -577,12 +499,6 @@
                                         "name": "double_left_option_pending",
                                         "type": "variable_if",
                                         "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
