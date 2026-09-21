@@ -799,8 +799,7 @@
                         "vendor_id": 22634
                     },
                     "ignore": false,
-                    "ignore_vendor_events": true,
-                    "manipulate_caps_lock_led": false
+                    "ignore_vendor_events": true
                 },
                 {
                     "identifiers": {
@@ -818,6 +817,14 @@
                         "vendor_id": 8224
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 40963,
+                        "vendor_id": 22634
+                    },
+                    "ignore": true
                 }
             ],
             "fn_function_keys": [
