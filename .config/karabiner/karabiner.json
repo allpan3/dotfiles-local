@@ -4,32 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Moonlight: Caps Lock as F18 for Linux Ctrl/Esc",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.moonlight-stream\\.Moonlight$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f18",
-                                        "repeat": true
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Left Control → Hyper (Right Control+Option+Command)",
                         "manipulators": [
                             {
