@@ -794,8 +794,13 @@
                         "product_id": 44116,
                         "vendor_id": 19800
                     },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "f17" },
+                            "to": [{ "key_code": "f13" }]
+                        }
+                    ]
                 },
                 {
                     "identifiers": {
