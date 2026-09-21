@@ -1,4 +1,5 @@
-### Local bashrc file containing system-specific settings
+# ~/.bashrc_local: sourced by ~/.bashrc for interactive Bash shells only
+# Contains machine-specific aliases and completion setup
 
 ########## Variables ##########
 # macOS automatically adds all paths in /etc/paths.d
@@ -9,39 +10,41 @@ alias dsclean='find . -type f -name .DS_Store -delete'
 alias lv='NVIM_APPNAME="nvim-lazyvim" nvim'
 
 ########## Completion ##########
-if [[ -d "${HOMEBREW_PREFIX}" ]] ; then
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
-  then
-      source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-      for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-      do
-          [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-      done
+if ((BASH_VERSINFO[0] >= 4)); then
+  if [[ -d "${HOMEBREW_PREFIX}" ]] ; then
+    if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+    then
+        source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+    else
+        for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+        do
+            [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+        done
+    fi
   fi
+
+  # Override typst completion behavior
+  # Completes typst compile positional arguments as files
+  _typst_files_first() {
+    local cur prev sub
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    sub="${COMP_WORDS[1]}"
+
+    if [[ "$sub" == compile || "$sub" == c ]] && [[ "$cur" != -* ]]; then
+      case "$prev" in
+        --format|-f|--pdf-standard|--deps-format|--features|--diagnostic-format)
+          _typst "$@"
+          return
+          ;;
+      esac
+
+      COMPREPLY=( $(compgen -f -- "$cur") )
+      return
+    fi
+
+    _typst "$@"
+  }
+
+  complete -o filenames -o bashdefault -o default -F _typst_files_first typst
 fi
-
-# Override typst completion behavior
-# Completes typst compile positional arguments as files
-_typst_files_first() {
-  local cur prev sub
-  cur="${COMP_WORDS[COMP_CWORD]}"
-  prev="${COMP_WORDS[COMP_CWORD-1]}"
-  sub="${COMP_WORDS[1]}"
-
-  if [[ "$sub" == compile || "$sub" == c ]] && [[ "$cur" != -* ]]; then
-    case "$prev" in
-      --format|-f|--pdf-standard|--deps-format|--features|--diagnostic-format)
-        _typst "$@"
-        return
-        ;;
-    esac
-
-    COMPREPLY=( $(compgen -f -- "$cur") )
-    return
-  fi
-
-  _typst "$@"
-}
-
-complete -o filenames -o bashdefault -o default -F _typst_files_first typst
