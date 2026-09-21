@@ -824,7 +824,9 @@
                         "product_id": 40963,
                         "vendor_id": 22634
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "identifiers": {
