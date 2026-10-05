@@ -74,7 +74,7 @@
                         "title": "Change right_shift + left_shift to caps_lock"
                     },
                     {
-                        "description": "CAPS_LOCK to control when pressed with any other key, to ESC when alone.",
+                        "description": "Right Control acts as Control with other keys, Escape when tapped alone.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -86,25 +86,25 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "caps_lock",
+                                    "key_code": "right_control",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "right_control pressed",
                                             "value": 1
                                         }
                                     },
                                     {
-                                        "key_code": "left_control",
+                                        "key_code": "right_control",
                                         "lazy": true
                                     }
                                 ],
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "caps_lock pressed",
+                                            "name": "right_control pressed",
                                             "value": 0
                                         }
                                     }
@@ -115,27 +115,23 @@
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK+hjkl to arrow keys (no other modifiers) in non-terminal apps. Must also enable the main CAPS_LOCK setting.",
+                        "description": "Right Control+hjkl to arrow keys (no other modifiers) in non-terminal apps.",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
-                                            "com.mitchellh.ghostty"
+                                            "com.mitchellh.ghostty",
+                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
@@ -143,22 +139,18 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
-                                            "com.mitchellh.ghostty"
+                                            "com.mitchellh.ghostty",
+                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
@@ -166,22 +158,18 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
-                                            "com.mitchellh.ghostty"
+                                            "com.mitchellh.ghostty",
+                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "h",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
@@ -189,22 +177,18 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
                                             "com.github.wez.wezterm",
-                                            "com.mitchellh.ghostty"
+                                            "com.mitchellh.ghostty",
+                                            "^com\\.moonlight-stream\\.Moonlight$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": { "mandatory": ["left_control"] }
+                                    "modifiers": { "mandatory": ["right_control"] }
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
@@ -212,12 +196,12 @@
                         ]
                     },
                     {
-                        "description": "CAPS_LOCK+regular keys: 20 ms release grace in terminal apps. Must also enable the main CAPS_LOCK setting.",
+                        "description": "Right Control+regular keys: 20 ms release grace in terminal apps. Must also enable the main Right Control setting.",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -240,7 +224,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -263,7 +247,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -286,7 +270,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -309,7 +293,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -332,7 +316,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -355,7 +339,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -378,7 +362,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -401,7 +385,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "caps_lock pressed",
+                                        "name": "right_control pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -426,7 +410,7 @@
                                     {
                                         "conditions": [
                                             {
-                                                "name": "caps_lock pressed",
+                                                "name": "right_control pressed",
                                                 "type": "variable_if",
                                                 "value": 0
                                             }
@@ -439,7 +423,7 @@
                                     {
                                         "conditions": [
                                             {
-                                                "name": "caps_lock pressed",
+                                                "name": "right_control pressed",
                                                 "type": "variable_if",
                                                 "value": 0
                                             }
