@@ -437,7 +437,7 @@
                         ]
                     },
                     {
-                        "description": "Left Option+Shift tapped alone sends Option+non_us_backslash (set it as \"Select the previous input source\"). Hold Option and tap Shift again to open the input source menu.",
+                        "description": "Left Option+Shift tapped alone sends Option+non_us_backslash (set it as \"Select the previous input source\"). Hold Option and tap Shift again to open the input source menu. Option stays pressed for 100 ms after non_us_backslash: if Option is released within a few ms after the shortcut key, macOS switches two times.",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -468,7 +468,13 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "non_us_backslash" }],
+                                "to_if_alone": [
+                                    { "key_code": "non_us_backslash" },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none"
+                                    }
+                                ],
                                 "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "type": "basic"
                             },
@@ -501,7 +507,13 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "non_us_backslash" }],
+                                "to_if_alone": [
+                                    { "key_code": "non_us_backslash" },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none"
+                                    }
+                                ],
                                 "to_if_held_down": [{ "key_code": "right_shift" }],
                                 "type": "basic"
                             },
@@ -546,6 +558,11 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "non_us_backslash",
+                                        "modifiers": ["left_option"]
+                                    },
+                                    {
+                                        "hold_down_milliseconds": 100,
+                                        "key_code": "vk_none",
                                         "modifiers": ["left_option"]
                                     }
                                 ],
