@@ -28,7 +28,7 @@ chsh -s /opt/homebrew/bin/bash
 
 # Brew CLI utils
 brew install bash-completion@2 tree
-brew install tree-sitter-cli ripgrep nvim
+brew install node tree-sitter-cli ripgrep nvim
 brew install fd fzf git-delta lazygit dust bat
 brew install starship
 
